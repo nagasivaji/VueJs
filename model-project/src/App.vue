@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>{{ title }}</h1>
-        <Model title="Model Title" content="model content" :student = "['sivaji', 259]" />
+        <Model :header="header" :text="text" />
     </div>
 </template>
 
@@ -15,7 +15,8 @@
         data() {
             return {
                 title: "My First Vue app :)",
-                text: "Type somthing and click the button"
+                header: "Sign up for the Giveaway!",
+                text: "grab your ninja  swag  for half price!"
             };
     },
 };

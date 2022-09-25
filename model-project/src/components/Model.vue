@@ -1,9 +1,8 @@
 <template>
     <div class="backdrop">
         <div class="model">
-            <h1>{{title}}</h1>
-            <p>{{content}}</p>
-            <span>{{student[0]}}  {{student[1]}}</span>
+            <h1>{{header}}</h1>
+            <p>{{text}}</p>
         </div>
     </div>
 </template>
@@ -11,7 +10,7 @@
 
 <script>
 export default {
-    props : ['title', 'content', 'student']
+    props : ['header', 'text']
 }
 </script>
 
