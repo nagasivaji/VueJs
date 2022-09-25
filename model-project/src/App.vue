@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>{{ title }}</h1>
-        <Model title="Model Title" content="model content" />
+        <Model title="Model Title" content="model content" :student = "['sivaji', 259]" />
     </div>
 </template>
 

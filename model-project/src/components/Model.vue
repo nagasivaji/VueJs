@@ -3,6 +3,7 @@
         <div class="model">
             <h1>{{title}}</h1>
             <p>{{content}}</p>
+            <span>{{student[0]}}  {{student[1]}}</span>
         </div>
     </div>
 </template>
@@ -10,7 +11,7 @@
 
 <script>
 export default {
-    props : ['title', 'content']
+    props : ['title', 'content', 'student']
 }
 </script>
 
