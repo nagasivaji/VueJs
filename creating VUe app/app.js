@@ -1,8 +1,15 @@
 // console.log("Hello Vue");
 
+
 // Importing Vue Create app for creating a Vue App
 const app = Vue.createApp({
-    
+    // we can have data here to access the data in HTML 
+
+    // We can have function here to cal from HTML
+
+    // We can have template here as well to render those templates in HTML
+
+    template: '<h2>Hello Vue from Uve App</h2>'
 });
 
 
