@@ -30,6 +30,10 @@
         border: none;
         padding: 0;
     }
+
+    .model p{
+        font-style: normal;
+    }
 </style>
 
 /*
