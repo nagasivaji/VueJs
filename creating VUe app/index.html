@@ -16,6 +16,10 @@
         <p>Count is: {{count}}</p>
         <button @click="count--">Decrease</button>
         <button @click="count++">Increase</button>
+        <br>
+        <button @click="resetCounter">Reset</button>
+        <!-- We can also provide click events to div elements as well -->
+        <div @click="resetCounter">Reset</div>
     </div>
 
 
