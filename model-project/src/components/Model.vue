@@ -1,13 +1,14 @@
 <template>
     <div class="backdrop">
         <div class="model">
+            <h1>Model Title</h1>
             <p>model content</p>
         </div>
     </div>
 </template>
 
 
-<style scoped>
+<style>
     .model{
         width: 400px;
         padding: 20px;
@@ -22,6 +23,12 @@
         background: rgba(0, 0, 0, 0.5);
         width: 100%;
         height: 100%;
+    }
+
+    .model h1{
+        color: #03cfbf;
+        border: none;
+        padding: 0;
     }
 </style>
 
