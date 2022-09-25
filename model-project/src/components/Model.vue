@@ -1,11 +1,19 @@
 <template>
     <div class="backdrop">
         <div class="model">
-            <h1>Model Title</h1>
-            <p>model content</p>
+            <h1>{{title}}</h1>
+            <p>{{content}}</p>
         </div>
     </div>
 </template>
+
+
+<script>
+export default {
+    props : ['title', 'content']
+}
+</script>
+
 
 
 <style>
@@ -36,14 +44,3 @@
     }
 </style>
 
-/*
-    when we specify the style tag just normally like this <style ></style>
-    then the stylong inside this style tag will appply to globally 
-
-    To limit this styling to this specific component,
-    we have to spesify "scoped" in style tag like this <style scoped></style>
-
-
-    Then the stylings is applied to only this component.
-
- */

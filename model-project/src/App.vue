@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>{{ title }}</h1>
-        <Model />
+        <Model title="Model Title" content="model content" />
     </div>
 </template>
 
