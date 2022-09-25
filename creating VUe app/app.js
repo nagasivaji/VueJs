@@ -4,21 +4,13 @@ const app = Vue.createApp({
     // Vue app data
     data(){
         return {
-            marks : this.refreshMarks(),
+            names:['Sushu', 'Shiva', 'Jerry', 'Tom']
         };
         
     },
 
     methods:{
-        refreshMarks(){
-            console.log(this.marks);
-
-            const mark = Math.floor(Math.random(this.marks) * 100);
-
-            this.marks =  mark;
-            
-            return mark;
-        }
+        
     }
 });
 

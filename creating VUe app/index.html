@@ -13,13 +13,11 @@
     <h1>Hello Vue</h1>
 
     <div id="app">
-        <h1>Grade Calculator</h1>
-        <h3>Marks Got: {{marks}}</h3>
-        <h2 v-if="marks >= 80">High marks</h2>
-        <h2 v-else-if="marks < 80 && marks >= 50">Average Marks</h2>
-        <h2 v-else-if="marks < 50 && marks >= 30">Poor Marks</h2>
-        <h2 v-else>Failed</h2>
-        <button @click="refreshMarks">Refresh Marks</button>
+        <ul>
+            <li v-for="name in names">
+                <h3>{{name}}</h3>
+            </li>
+        </ul>
     </div>
 
 
