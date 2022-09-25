@@ -13,13 +13,13 @@
     <h1>Hello Vue</h1>
 
     <div id="app">
-        <p>Count is: {{count}}</p>
-        <button @click="count--">Decrease</button>
-        <button @click="count++">Increase</button>
-        <br>
-        <button @click="resetCounter">Reset</button>
-        <!-- We can also provide click events to div elements as well -->
-        <div @click="resetCounter">Reset</div>
+        <h1>Grade Calculator</h1>
+        <h3>Marks Got: {{marks}}</h3>
+        <h2 v-if="marks >= 80">High marks</h2>
+        <h2 v-else-if="marks < 80 && marks >= 50">Average Marks</h2>
+        <h2 v-else-if="marks < 50 && marks >= 30">Poor Marks</h2>
+        <h2 v-else>Failed</h2>
+        <button @click="refreshMarks">Refresh Marks</button>
     </div>
 
 
