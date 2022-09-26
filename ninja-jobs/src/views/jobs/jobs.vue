@@ -42,12 +42,4 @@ export default {
     text-decoration: none;
 }
 
-
-
-/* button {
-    margin: 0 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-} */
 </style>
