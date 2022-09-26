@@ -1,5 +1,5 @@
 <template>
-    <div class="block">
+    <div class="block" v-if="showBlock">
         click me
     </div>
 </template>
@@ -7,6 +7,17 @@
 <script>
 export default {
     props: ['delay'],
+    data() {
+        return {
+            showBlock: false,
+        }
+    },
+
+    // Life cycle hook will fire when component is mounted to an HTML tag
+    mounted() {
+        console.log("Mounted the component");
+    },
+    
 }
 </script>
 
