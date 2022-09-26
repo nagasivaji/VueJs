@@ -1,16 +1,16 @@
 <template>
     <div>
-        <h1>Hello World</h1>
+        <SignupForm />
     </div>
 </template>
 
 <script>
 // Importing components
+import SignupForm from "./components/SignupForm.vue";
 
 export default {
     name: 'App',
-    components: {
-    }
+    components: { SignupForm }
 }
 </script>
 
@@ -24,6 +24,10 @@ export default {
     margin-top: 60px;
 }
 
+body{
+    margin: 0px;
+    background: #eee;
+}
 
 
 </style>
