@@ -3,6 +3,9 @@
         <div class="model" :class="{sale : theme === 'sale'}">
             <!-- If we use sloat then it will replace data comming from Component tag -->
             <slot></slot>
+            <div class="actions">
+                <slot name="links"></slot>
+            </div>
         </div>
     </div>
 </template>

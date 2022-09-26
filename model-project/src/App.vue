@@ -6,6 +6,13 @@
             <Model theme="sale" @close="toggleModel" >
                 <h1>{{header}}</h1>
                 <p>{{text}}</p>
+                
+                <!-- Named sloats so that we can identify them in chlid component -->
+                <template v-slot:links>
+                    <a href="#">Sign up</a>
+                    
+                    <a href="#">Log in </a>
+                </template>
             </Model>
         </div>
         <button @click.ctrl="toggleModel">open model (ctrl)</button>
