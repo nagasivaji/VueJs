@@ -5,8 +5,7 @@
         <div v-if="showModel">
             <Model :header="header" :text="text" theme="sale" @close="toggleModel" />
         </div>
-        <!-- After event name we can specify the event modifier -->
-        <button @click.right="toggleModel">open model</button>
+        <button @click.ctrl="toggleModel">open model (ctrl)</button>
     </div>
 </template>
 

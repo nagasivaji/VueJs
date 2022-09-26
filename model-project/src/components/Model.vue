@@ -1,5 +1,6 @@
 <template>
-    <div class="backdrop" @click="closeModel">
+    <!-- On click will work only for the backdrop div not for it child elements -->
+    <div class="backdrop" @click.self="closeModel">
         <div class="model" :class="{sale : theme === 'sale'}">
             <h1>{{header}}</h1>
             <p>{{text}}</p>
