@@ -61,5 +61,39 @@ export default {
     .model.sale h1{
         color: white;
     }
+
+    /* sale styles */
+    .model .actions {
+        text-align: center;
+        margin: 30px 0px 10px 0px;
+        color: #333;
+    }
+    .model .actions a{
+        color: #333;
+        padding: 8px;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 10px;
+    }
+
+    .model.sale{
+        background-color: crimson;
+        color: white;
+    }
+
+    .model.sale h1{
+        color: white;
+    }
+
+    .model.sale .actions{
+        color: white;
+    }
+
+    .model.sale .actions a{
+        color: white;
+    }
+
+
 </style>
 

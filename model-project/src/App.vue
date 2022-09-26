@@ -10,7 +10,6 @@
                 <!-- Named sloats so that we can identify them in chlid component -->
                 <template v-slot:links>
                     <a href="#">Sign up</a>
-                    
                     <a href="#">Log in </a>
                 </template>
             </Model>
