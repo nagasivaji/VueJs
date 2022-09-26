@@ -1,5 +1,5 @@
 <template>
-    <div class="block" v-if="showBlock">
+    <div class="block" v-if="showBlock" @click="stopTimer">
         click me
     </div>
 </template>
@@ -10,28 +10,32 @@ export default {
     data() {
         return {
             showBlock: false,
+            timer: null,
+            reactionTime: 0
         }
     },
 
     // Life cycle hook will fire when component is mounted to an HTML tag
     mounted() {
-        console.log("Mounted the component");
+        //console.log("Mounted the component");
 
-        // setting timer to chnage the value of "showBlock" after a delay of this.delay
-        // Which is comming form Block Component Tag
         setTimeout(()=>{
             this.showBlock = true;
-            console.log(this.delay);
+            //this will start timer when component is mounted
+            this.startTimer();
         }, this.delay);
     },
-    // Life cycle hook will fire when component data is updated
-    updated() {
-        // It will print when showBlock is updated with setTimeout in mounted hook
-        console.log("Updated the component");
-    },
-    // Life cycle hook will fire when component is unmounted
-    unmounted() {
-        console.log("Unmounted the component");
+
+    methods: {
+        startTimer(){
+            this.timer = setInterval(()=>{
+                this.reactionTime += 10;
+            }, 10);
+        },
+        stopTimer(){
+            clearInterval(this.timer);
+            console.log(this.reactionTime);
+        },
     },
 }
 </script>
