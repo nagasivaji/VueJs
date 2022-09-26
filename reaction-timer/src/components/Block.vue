@@ -29,6 +29,10 @@ export default {
         // It will print when showBlock is updated with setTimeout in mounted hook
         console.log("Updated the component");
     },
+    // Life cycle hook will fire when component is unmounted
+    unmounted() {
+        console.log("Unmounted the component");
+    },
 }
 </script>
 
