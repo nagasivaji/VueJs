@@ -1,6 +1,6 @@
 <template>
-    <div class="backdrop">
-        <div class="model">
+    <div class="backdrop" @click="toggleModel">
+        <div class="model" :class="{sale : theme === 'sale'}">
             <h1>{{header}}</h1>
             <p>{{text}}</p>
         </div>
@@ -10,7 +10,13 @@
 
 <script>
 export default {
-    props : ['header', 'text']
+    props : ['header', 'text', 'theme', "closeModel"],
+    methods: {
+        toggleModel(){
+            //console.log(this.closeModel);
+            this.closeModel();
+        }
+    },
 }
 </script>
 
@@ -41,6 +47,15 @@ export default {
 
     .model p{
         font-style: normal;
+    }
+
+    .model.sale{
+        background: crimson;
+        color: white;
+    }
+
+    .model.sale h1{
+        color: white;
     }
 </style>
 

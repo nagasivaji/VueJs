@@ -1,7 +1,11 @@
 <template>
     <div>
         <h1>{{ title }}</h1>
-        <Model :header="header" :text="text" />
+        <p>Welcome...</p>
+        <div v-if="showModel">
+            <Model :header="header" :text="text" theme="sale" :closeModel="toggleModel" />
+        </div>
+        <button @click="toggleModel">open model</button>
     </div>
 </template>
 
@@ -16,9 +20,16 @@
             return {
                 title: "My First Vue app :)",
                 header: "Sign up for the Giveaway!",
-                text: "grab your ninja  swag  for half price!"
+                text: "grab your ninja  swag  for half price!",
+                showModel: false
             };
-    },
+        },
+
+        methods: {
+            toggleModel(){
+                this.showModel = !this.showModel;
+            }
+        },
 };
 
 </script>
