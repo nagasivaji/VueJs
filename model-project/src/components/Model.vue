@@ -1,9 +1,8 @@
 <template>
-    <!-- On click will work only for the backdrop div not for it child elements -->
     <div class="backdrop" @click.self="closeModel">
         <div class="model" :class="{sale : theme === 'sale'}">
-            <h1>{{header}}</h1>
-            <p>{{text}}</p>
+            <!-- If we use sloat then it will replace data comming from Component tag -->
+            <slot></slot>
         </div>
     </div>
 </template>
@@ -11,7 +10,7 @@
 
 <script>
 export default {
-    props : ['header', 'text', 'theme'],
+    props : ['theme'],
     methods: {
         closeModel(){
             //console.log(this.closeModel);

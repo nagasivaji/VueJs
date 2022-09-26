@@ -3,7 +3,10 @@
         <h1>{{ title }}</h1>
         <p>Welcome...</p>
         <div v-if="showModel">
-            <Model :header="header" :text="text" theme="sale" @close="toggleModel" />
+            <Model theme="sale" @close="toggleModel" >
+                <h1>{{header}}</h1>
+                <p>{{text}}</p>
+            </Model>
         </div>
         <button @click.ctrl="toggleModel">open model (ctrl)</button>
     </div>
@@ -50,3 +53,20 @@
         padding-bottom: 10px;
     }
 </style>
+
+
+/*
+
+    # The HTML tags which are passing between the Components are called Slots
+
+            <Model theme="sale" @close="toggleModel" >
+                <h1>{{header}}</h1>
+                <p>{{text}}</p>
+            </Model>
+
+    # Model is the custom components
+    # The h1 and p tags present in model tag are used to pass to Model Component
+
+    # Sloats are used to pass some complex data other than strings, integers, booleans
+    # Ex: to pass HTML form or some tags like av=bive example
+ */
