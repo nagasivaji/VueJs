@@ -25,6 +25,11 @@ const routes = [
         name: 'jobsDetails',
         component: JobsDetils,
         props: true,
+    },
+    // Redirect for all jobs
+    {
+        path: '/all-jobs',
+        redirect: '/jobs'
     }
 ]
 
