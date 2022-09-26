@@ -1,5 +1,5 @@
 <template>
-    <div class="backdrop" @click="toggleModel">
+    <div class="backdrop" @click="closeModel">
         <div class="model" :class="{sale : theme === 'sale'}">
             <h1>{{header}}</h1>
             <p>{{text}}</p>
@@ -10,11 +10,12 @@
 
 <script>
 export default {
-    props : ['header', 'text', 'theme', "closeModel"],
+    props : ['header', 'text', 'theme'],
     methods: {
-        toggleModel(){
+        closeModel(){
             //console.log(this.closeModel);
-            this.closeModel();
+            //this.closeModel();
+            this.$emit('close');
         }
     },
 }

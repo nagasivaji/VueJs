@@ -3,7 +3,7 @@
         <h1>{{ title }}</h1>
         <p>Welcome...</p>
         <div v-if="showModel">
-            <Model :header="header" :text="text" theme="sale" :closeModel="toggleModel" />
+            <Model :header="header" :text="text" theme="sale" @close="toggleModel" />
         </div>
         <button @click="toggleModel">open model</button>
     </div>
