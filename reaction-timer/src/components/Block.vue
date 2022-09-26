@@ -16,8 +16,19 @@ export default {
     // Life cycle hook will fire when component is mounted to an HTML tag
     mounted() {
         console.log("Mounted the component");
+
+        // setting timer to chnage the value of "showBlock" after a delay of this.delay
+        // Which is comming form Block Component Tag
+        setTimeout(()=>{
+            this.showBlock = true;
+            console.log(this.delay);
+        }, this.delay);
     },
-    
+    // Life cycle hook will fire when component data is updated
+    updated() {
+        // It will print when showBlock is updated with setTimeout in mounted hook
+        console.log("Updated the component");
+    },
 }
 </script>
 
