@@ -1,9 +1,8 @@
 <template>
     <div class="home">
         <h1>HOME</h1>
-        <!-- Data comming from setup function -->
-        <p ref="p">{{name}}</p>
-        <p>{{EmpId}}</p>
+        
+        <p>My name is {{name}} and my Employee ID is{{EmpId}}</p>
         <button @click="handleClick">Click ME</button>
     </div>
 </template>
@@ -17,20 +16,17 @@ export default {
     name: 'HomeView',
     
     setup() {
-        // Refs
-        const p = ref(null);
 
 
-        let name = "sivaji";
-        let id = 22;
+        let name = ref("sivaji");
+        let id = ref(259);
 
         const handleClick = () => {
-            console.log(p);
-            console.log(p.value);
-            p.value.textContent = "Naga Sivaji"
+            name.value = "Naga Sivaji"
+            console.log(name.value);
         };
 
-        return {name, EmpId: id, handleClick, p};
+        return {name, EmpId: id, handleClick};
     },
     
 }
@@ -55,5 +51,13 @@ export default {
     # If tha data in the setup hook gets chnaged it will not reflect the data in the component. Because they are NOT REACTIVE data
 
 
+    ``````````````````````````````````` NEW NOTE ````````````````````````````````````````````````````
 
+    # If you want to make any variable in setup to become REACTIVE we can use REF's for that like below shown.
+
+    # let name = ref("sivaji"); then the variable name can be dynamic and it will render component when ever name has changed its value.
+
+    # If we want to update value of a refs variable it will be like this name.value = "Naga Sivaji"
+
+    # if we want to show the value of a refs variable in component it will be like name only. No need of name.value
  */
