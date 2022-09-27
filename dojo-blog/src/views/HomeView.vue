@@ -16,6 +16,8 @@
 import PostList from '../components/PostList.vue';
 // Importing refs
 import { ref } from "vue";
+// imporing grtposts logic from external js file
+import getPosts from './../composables/getPosts';
 
 
 export default {
@@ -24,27 +26,8 @@ export default {
 
     setup() {
 
-        const posts = ref([]);
-        const error = ref(null);
-
-        // API
-        const load = async() => {
-            try{
-                let data = await fetch("http://localhost:8000/posts");
-                //console.log(data);
-                if(!data.ok)
-                    throw Error('No data available');
-
-                posts.value = await data.json();
-            }
-            catch(err){
-                error.value = err.message;
-                console.log(error.value);
-            }
-        }
-
-        load();
-
+        const {posts, error, load} = getPosts();
+        
         return { posts, error };
     },
 };
