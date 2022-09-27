@@ -1,37 +1,37 @@
 <template>
     <div class="home">
         <h1>HOME</h1>
-        
-        <p>My name is {{name}} and my Employee ID is {{EmpId}}</p>
-        <button @click="handleClick">Click ME</button>
-        <button @click="EmpId++">Increase EMP ID by 1</button>
-        <input type="text" v-model="name">
+        <h2>Refs</h2>
+        <p>{{ ninjaOne.name }} - {{ ninjaOne.age }}</p>
+        <button @click="updateNinjaOne">Update NinjaOne</button>
+        <h2>Reactive</h2>
+        <p>{{ ninjaTwo.name }} - {{ ninjaTwo.age }}</p>
+        <button @click="updateNinjaTwo">Update NinjaTwo</button>
     </div>
 </template>
 
 <script>
-
 // Importing refs
-import { ref } from 'vue';
+import { ref, reactive } from "vue";
 
 export default {
-    name: 'HomeView',
-    
+    name: "HomeView",
+
     setup() {
+        let ninjaOne = ref({ name: "mario", age: 30 });
+        let ninjaTwo = reactive({ name: "luigi", age: 35 });
 
-
-        let name = ref("sivaji");
-        let id = ref(259);
-
-        const handleClick = () => {
-            name.value = "Naga Sivaji"
-            console.log(name.value);
+        const updateNinjaOne = () => {
+        ninjaOne.value.age = 40;
         };
 
-        return {name, EmpId: id, handleClick};
+        const updateNinjaTwo = () => {
+        ninjaTwo.age = 50;
+        };
+
+        return { ninjaOne, updateNinjaOne, ninjaTwo, updateNinjaTwo };
     },
-    
-}
+};
 </script>
 
 
@@ -62,4 +62,18 @@ export default {
     # If we want to update value of a refs variable it will be like this name.value = "Naga Sivaji"
 
     # if we want to show the value of a refs variable in component it will be like name only. No need of name.value
+
+    ``````````````````````````````````` NEW NOTE ````````````````````````````````````````````````````
+
+    # REFS vs REACTIVE
+    # we can not use primitive values in REACTIVE
+    # But by using REACTIVE we can neglect the usage of value property. Below is the example
+
+            Data...
+            let ninjaOne = ref({name: "mario", age:30});
+            let ninjaTwo = reactive({name: "luigi", age:35});
+
+            Updating...
+            ninjaOne.value.age = 40;
+            ninjaTwo.age = 50;
  */
