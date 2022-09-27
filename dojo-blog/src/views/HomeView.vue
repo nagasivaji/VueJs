@@ -2,7 +2,7 @@
     <div class="home">
         <h1>HOME</h1>
         <!-- Data comming from setup function -->
-        <p>{{name}}</p>
+        <p ref="p">{{name}}</p>
         <p>{{EmpId}}</p>
         <button @click="handleClick">Click ME</button>
     </div>
@@ -10,17 +10,26 @@
 
 <script>
 
+// Importing refs
+import { ref } from 'vue';
 
 export default {
     name: 'HomeView',
-    // Setup hook will execue before all the hooks going to execute. : Composition API
+    
     setup() {
+        // Refs
+        const p = ref(null);
+
+
         let name = "sivaji";
         let id = 22;
 
-        const handleClick = () => console.log("CLICKED");;
+        const handleClick = () => {
+            console.log(p);
+            console.log(p.value);
+        };
 
-        return {name, EmpId: id, handleClick};
+        return {name, EmpId: id, handleClick, p};
     },
     
 }
