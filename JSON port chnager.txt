@@ -1,0 +1,3 @@
+json-server -p 4000 db.json
+
+my command : npx json-server -p 8000 data/db.json
