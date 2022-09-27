@@ -27,6 +27,7 @@ export default {
         const handleClick = () => {
             console.log(p);
             console.log(p.value);
+            p.value.textContent = "Naga Sivaji"
         };
 
         return {name, EmpId: id, handleClick, p};
