@@ -14,11 +14,6 @@ import { onMounted } from 'vue';
 export default {
     props: ['posts'],
     components: { SinglePost},
-    setup(props) {
-        console.log(props);
-        // Life cycle hooks in setup()
-        onMounted(console.log("Mounted"));
-    }
 }
 </script>
 
