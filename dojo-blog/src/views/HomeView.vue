@@ -2,8 +2,10 @@
     <div class="home">
         <h1>HOME</h1>
         
-        <p>My name is {{name}} and my Employee ID is{{EmpId}}</p>
+        <p>My name is {{name}} and my Employee ID is {{EmpId}}</p>
         <button @click="handleClick">Click ME</button>
+        <button @click="EmpId++">Increase EMP ID by 1</button>
+        <input type="text" v-model="name">
     </div>
 </template>
 
