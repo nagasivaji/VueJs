@@ -15,7 +15,6 @@ export default {
             return props.post.body.length > 100 ? props.post.body.substring(0, 99) + "....": props.post.body;
         });
 
-
         return {snippet};
     }
 }
