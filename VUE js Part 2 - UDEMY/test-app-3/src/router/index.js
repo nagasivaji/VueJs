@@ -7,13 +7,11 @@ const routes = [
     path: "/",
     name: 'home',
     component: Home,
-    props: true,
   },
   {
     path: "/",
     name: 'about',
     component: About,
-    props: true
   }
 ]
 
@@ -22,13 +20,11 @@ const router = createRouter({
   routes
 })
 
-// router.beforeEach((to, from, next) => {
-//   console.log(to.path.split('/')[2])
-//   if (to.path.includes('/home')) {
-//     next({ path: '/', name: 'home' });
-//   } else {
-//     next();
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  console.log(to, from)
+  to.fullPath = '/'
+  to.matched[0].params = to.query
+  next()
+});
 
 export default router
