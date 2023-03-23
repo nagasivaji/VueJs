@@ -1,0 +1,47 @@
+// Normal Script....
+<template>
+  <div>
+    <h1>{{ name }}</h1>
+    <h1>{{ id }}</h1>
+  </div>
+</template>
+
+<script>
+import { ref } from "vue";
+export default {
+  setup() {
+    var name = ref("Tom");
+    var id = ref(259);
+
+    setTimeout(() => {
+      name.value = "Jerry";
+      id.value = 289;
+    }, 2000);
+
+    return { name, id };
+  },
+};
+</script>
+
+
+
+// Script as setup....
+<template>
+  <div>
+    <h1>{{ name }}</h1>
+    <h1>{{ id }}</h1>
+  </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+  // starting...
+  var name = ref("Tom");
+  var id = ref(259);
+
+  setTimeout(() => {
+    name.value = "Jerry";
+    id.value = 289;
+  }, 2000);
+  // Ending...
+</script>
